@@ -1,0 +1,33 @@
+https://www.codechef.com/submit/SUMPRODSEG
+
+code:-
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long 
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    ll x,y;
+	    cin>>x>>y;
+	    int flag = 0;
+	    for(ll i=2;i*i<=y;i++){
+	        if(y%i!=0)
+	            continue;
+	        ll x1 = x/2;
+	        ll x2 = (x+1)/2;
+	        if(y/i<x1 || i>x2){
+	            cout<<x1<<" "<<x2<<endl;
+	            cout<<i<<" "<<y/i<<endl;
+	            flag = 1;
+	            break;
+	        }
+	    }
+	    if(!flag)
+	        cout<<-1<<endl;
+	        
+	}
+	return 0;
+}
